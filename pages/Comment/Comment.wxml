@@ -1,0 +1,93 @@
+<view class="theContainer"> 
+  <view class='container-post'>
+   <view class="orderList">
+      <view class="order-title">
+        <view class="order-title-restaurantName">
+         糖醋里脊评分：</view>
+        <view class="order-title-state">2018-7-4 下单</view>
+      </view>
+      <view class="order-content">
+        <image class="order-content-restaurantImg"
+         src="../../pic/guobafan.png"></image>
+        <view class="order-content-info">
+          <view class='container-commodity'>
+            <view>商品质量：</view>
+            <block wx:for="{{one_10}}">
+            <image src='../../pic/evalutionStar.png' class='Starimg'></image>
+            </block>
+            <block wx:for="{{two_10}}">
+            <image src='../../pic/badStar.png' class='Starimg'></image>
+            </block>
+          </view>
+          <view class='container-commodity'>
+            <view>口味：</view>
+            <block wx:for="{{one_20}}">
+            <image src='../../pic/evalutionStar.png' class='Starimg'></image>
+            </block>
+            <block wx:for="{{two_20}}">
+            <image src='../../pic/badStar.png' class='Starimg'></image>
+            </block>
+          </view>
+          <view class='container-commodity'>
+            <view>包装：</view>
+            <block wx:for="{{one_30}}">
+            <image src='../../pic/evalutionStar.png' class='Starimg'>></image>
+            </block>
+            <block wx:for="{{two_30}}">
+            <image src='../../pic/badStar.png' class='Starimg'></image>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="order-footer">
+        <view class="order-footer-orderAgain">再来一单</view>
+      </view>
+    </view>
+  </view>
+  <view class='container-post'>
+   <view class="orderList">
+      <view >
+        <view class="order-title-restaurantName">
+         请评价：</view>
+      </view>
+      <view class="order-commodity">
+        <image class="order-content-restaurantImg"
+         src="../../pic/guobafan.png"></image>
+        <view class="order-content-info">
+          <view class='container-commodity'>
+            <view>商品质量：</view>
+            <block wx:for="{{one_1}}" wx:key="index">
+            <image catchtap='in_xin1' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+            </block>
+            <block wx:for="{{two_1}}" wx:key="index">
+            <image catchtap='in_xin1' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+            </block>
+          </view>
+          <view class='container-commodity'>
+            <view>口味：</view>
+            <block wx:for="{{one_2}}" wx:key="index">
+            <image catchtap='in_xin2' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+            </block>
+            <block wx:for="{{two_2}}" wx:key="index">
+            <image catchtap='in_xin2' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+            </block>
+          </view>
+          <view class='container-commodity'>
+            <view>包装：</view>
+            <block wx:for="{{one_3}}" wx:key="index">
+            <image catchtap='in_xin3' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+            </block>
+            <block wx:for="{{two_3}}" wx:key="index">
+            <image catchtap='in_xin3' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="order-footer">
+        <view class="order-footer-submit">提交评价</view>
+        </view>
+    </view>
+    
+  </view>
+  
+</view>

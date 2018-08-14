@@ -1,0 +1,22 @@
+<block wx:for="{{orderList}}" wx:key="">
+    <view class="orderList">
+      <view class="order-title">
+        <view class="order-title-restaurantName">
+         {{item.date}}  {{item.time}}</view>
+        <view class="order-title-state">{{item.state}}</view>
+      </view>
+      <view class="order-content">
+        <image class="order-content-restaurantImg"
+         src="../../pic/guobafan.png"></image>
+        <view class="order-content-info">
+          <view class="order-content-info-howToDistribute">
+          {{item.howToDistribute}}</view>
+          <view class="order-content-info-price">￥ {{item.price}}</view>
+        </view>
+      </view>
+      <view class="order-footer">
+        <view class="order-footer-orderAgain">再来一单</view>
+        <view class="order-footer-goToComment" bindtap='goToComment'>去评论</view>
+      </view>
+    </view>
+</block> 

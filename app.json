@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/sureInfo/sureInfo",
+    "pages/dishes/dishes",
+    "pages/submit/submit",
+    "pages/addAddress/addAddress",
+    "pages/test/test",
+    "pages/evaluation/evaluation",
+    "pages/Comment/Comment",
+    "pages/thePay/thePayOver",
+    "pages/thePay/thePay",
+    "pages/Order/Order",
+    "pages/existAddress/existAddress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

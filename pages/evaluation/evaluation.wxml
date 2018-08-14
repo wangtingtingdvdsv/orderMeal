@@ -1,0 +1,119 @@
+<!--pages/evaluation/evaluation.wxml-->
+<view class='peopleEvalution'>
+    <image class='people' src="../../pic/zhangsan.jpg" alt="好评"></image>
+    <view class='evaluation'>
+      <view class='evaluationTime'>
+        <text>张三</text>
+        <text class='time'>2019年07月07日 19.36</text>
+      </view>
+      <view class='evaluationStarNum'>
+        <text>商品质量</text>
+        <view>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">口&ensp;&ensp;&ensp;&ensp;味</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">包&ensp;&ensp;&ensp;&ensp;装</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+    </view>
+</view>
+<view class='peopleEvalution'>
+    <image class='people' src="../../pic/zhangsan.jpg" alt="好评"></image>
+    <view class='evaluation'>
+      <view class='evaluationTime'>
+        <text>李四</text>
+        <text class='time'>2019年07月07日 19.36</text>
+      </view>
+      <view class='evaluationStarNum'>
+        <text>商品质量</text>
+        <view>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">口&ensp;&ensp;&ensp;&ensp;味</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">包&ensp;&ensp;&ensp;&ensp;装</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+    </view>
+</view>
+<view class='peopleEvalution'>
+    <image class='people' src="../../pic/zhangsan.jpg" alt="好评"></image>
+    <view class='evaluation'>
+      <view class='evaluationTime'>
+        <text>王五</text>
+        <text class='time'>2019年07月07日 19.36</text>
+      </view>
+      <view class='evaluationStarNum'>
+        <text>商品质量</text>
+        <view>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar' src="../../pic/evalutionStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">口&ensp;&ensp;&ensp;&ensp;味</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+      <view class='evaluationStarNum'>
+        <text decode="{{true}}">包&ensp;&ensp;&ensp;&ensp;装</text>
+        <view>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/evalutionStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+          <image class='evaluationStar'  src="../../pic/badStar.png" alt="好评"></image>
+        </view>
+      </view>
+    </view>
+</view>
+

@@ -1,0 +1,38 @@
+
+<view bindtap="clickme">点击我可以看到底部弹框的出现</view>  
+ 
+<!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <!--在这里写弹出框里面的布局 -->
+    <view class='shopCar' bindtap="hideModal">清空购物车</view>
+    <view class='mealDetails'>
+      <view class='mealDetail'>
+        <text>Pos机</text>
+        <view>
+          <text>90</text>
+          <image></image>
+          <text>1</text>
+          <image></image>
+        </view>
+      </view>
+      <view class='mealDetail'>
+        <text>Pos机</text>
+        <view>
+          <text>90</text>
+          <image></image>
+          <text>1</text>
+          <image></image>
+        </view>
+      </view>
+    </view>
+    <view class='bottom'>
+      <view class='totalMoney'>
+        <text>90</text>
+        <text>另需2元</text>
+      </view>
+      <view class='spreadMoney'>还差5元起送</view>
+    </view>
+  </view>

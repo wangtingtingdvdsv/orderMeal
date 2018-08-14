@@ -1,0 +1,38 @@
+/* pages/evaluation/evaluation.wxss */
+.people{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  float: left;
+}
+.evaluation{
+  float: left;
+
+}
+.evaluationStar{
+  width: 70rpx;
+  height: 70rpx;
+}
+.time{
+  font-size: 25rpx;
+}
+.evaluationStarNum{
+  display: flex;
+  align-items: center;
+}
+.evaluationTime{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20rpx;
+}
+page{
+  background-color: rgb(247, 244, 244);
+}
+.peopleEvalution{
+  margin-top: 20rpx;
+  height: 300rpx;
+  width: 100%;
+  background-color: white;
+  padding-left: 30rpx;
+}
