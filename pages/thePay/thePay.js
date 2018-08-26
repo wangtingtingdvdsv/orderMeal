@@ -3,7 +3,7 @@ Page({
   data: {
     payment_mode: 1,//默认支付方式 微信支付
     isFocus: false,//控制input 聚焦
-    balance: 100,//余额
+    balance: 1269,//余额
     actual_fee: "",//待支付
     wallets_password_flag: false//密码输入遮罩
   },
@@ -90,8 +90,22 @@ function wallet_pay(_this) {
     duration: 1000,
     mask: true
   })
-  wx.redirectTo({
+  wx.reLaunch({
     url: 'thePayOver',
+  })
+  wx.request({
+    url: 'https://cxd.mynatapp.cc/buyer/order/pay',
+    method: 'POST',
+    header: {
+      'content-type': 'application/json'
+    },
+    data: {
+      userOpenid: app.globalData.userOpenid,
+      orderId: app.globalData.orderId
+    },
+    success: function (res) {
+      console.log(res)
+    }
   })
   /*
   1.支付成功

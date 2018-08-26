@@ -16,9 +16,9 @@
       <image class='timeIcon' src="../../pic/time.png" alt="时间"></image>
     </view>
     <view class='time'>
-      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+      <picker mode="time" value="{{time}}" start="{{nowTime}}" end="22:00" bindchange="bindTimeChange">
           <view class="picker">
-            送货时间: {{time ? time : '立即送出'}} 
+            送货时间: <text style='color:#13BA84'>{{time ? time : '请选择时间'}} </text>
           </view>
       </picker>
     </view>
@@ -27,8 +27,8 @@
 </view>
 
 <view class='mealInfoMoudle'>
-  <view class='name'>一食堂</view>
-  <view wx:for ="{{mealOrderInfo}}" wx:if="{{item.num != 0}}" class="mealName">
+  <view class='name'>医院食堂</view>
+  <view wx:key="ChoiceMeal" wx:for ="{{mealOrderInfo}}" wx:if="{{item.num != 0}}" class="mealName">
     
       <text>{{item.productName}}</text>
       <text class='num'>{{item.num}}</text>

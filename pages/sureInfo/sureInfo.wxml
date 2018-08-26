@@ -1,1 +1,1 @@
-<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+<button open-type="getUserInfo" bindtap="tap" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>

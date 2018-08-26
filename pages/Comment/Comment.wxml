@@ -1,5 +1,5 @@
 <view class="theContainer"> 
-  <view class='container-post'>
+  <!-- <view class='container-post'>
    <view class="orderList">
       <view class="order-title">
         <view class="order-title-restaurantName">
@@ -12,28 +12,28 @@
         <view class="order-content-info">
           <view class='container-commodity'>
             <view>商品质量：</view>
-            <block wx:for="{{one_10}}">
+            <block wx:for="{{one_10}}" wx:key="one_10">
             <image src='../../pic/evalutionStar.png' class='Starimg'></image>
             </block>
-            <block wx:for="{{two_10}}">
+            <block wx:for="{{two_10}}" wx:key="two_10">
             <image src='../../pic/badStar.png' class='Starimg'></image>
             </block>
           </view>
           <view class='container-commodity'>
             <view>口味：</view>
-            <block wx:for="{{one_20}}">
+            <block wx:for="{{one_20}}" wx:key="one_20">
             <image src='../../pic/evalutionStar.png' class='Starimg'></image>
             </block>
-            <block wx:for="{{two_20}}">
+            <block wx:for="{{two_20}}" wx:key="two_20">
             <image src='../../pic/badStar.png' class='Starimg'></image>
             </block>
           </view>
           <view class='container-commodity'>
             <view>包装：</view>
-            <block wx:for="{{one_30}}">
+            <block wx:for="{{one_30}}" wx:key="one_30">
             <image src='../../pic/evalutionStar.png' class='Starimg'>></image>
             </block>
-            <block wx:for="{{two_30}}">
+            <block wx:for="{{two_30}}"  wx:key="two_30" >
             <image src='../../pic/badStar.png' class='Starimg'></image>
             </block>
           </view>
@@ -43,12 +43,12 @@
         <view class="order-footer-orderAgain">再来一单</view>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class='container-post'>
-   <view class="orderList">
+   <view class="orderList" wx:for="{{product}}">
       <view >
         <view class="order-title-restaurantName">
-         请评价：</view>
+         {{item.productName}}：</view>
       </view>
       <view class="order-commodity">
         <image class="order-content-restaurantImg"
@@ -56,38 +56,36 @@
         <view class="order-content-info">
           <view class='container-commodity'>
             <view>商品质量：</view>
-            <block wx:for="{{one_1}}" wx:key="index">
-            <image catchtap='in_xin1' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
-            </block>
-            <block wx:for="{{two_1}}" wx:key="index">
-            <image catchtap='in_xin1' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
-            </block>
+        
+            <image  wx:for="{{starNum[item.productId].one_1}}"  wx:for-item="itemName"  id="{{item.productId}}" catchtap='in_xin1' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+            
+            
+            <image wx:for="{{starNum[item.productId].two_1}}" wx:for-item="itemName"  id="{{item.productId}}" catchtap='in_xin1' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+            
           </view>
           <view class='container-commodity'>
             <view>口味：</view>
-            <block wx:for="{{one_2}}" wx:key="index">
-            <image catchtap='in_xin2' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
-            </block>
-            <block wx:for="{{two_2}}" wx:key="index">
-            <image catchtap='in_xin2' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
-            </block>
+            
+            <image wx:for="{{starNum[item.productId].one_2}}"  wx:for-item="itemName" id='{{item.productId}}' catchtap='in_xin2' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+    
+            <image wx:for="{{starNum[item.productId].two_2}}"  wx:for-item="itemName" id='{{item.productId}}' catchtap='in_xin2' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+            
           </view>
           <view class='container-commodity'>
             <view>包装：</view>
-            <block wx:for="{{one_3}}" wx:key="index">
-            <image catchtap='in_xin3' id='{{index+1}}' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
-            </block>
-            <block wx:for="{{two_3}}" wx:key="index">
-            <image catchtap='in_xin3' id='{{index+1}}' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
-            </block>
+            
+            <image wx:for="{{starNum[item.productId].one_3}}"  wx:for-item="itemName" id='{{item.productId}}' catchtap='in_xin3' data-in='use_sc2' src='../../pic/evalutionStar.png' class='Starimg'>></image>
+
+            <image wx:for="{{starNum[item.productId].two_3}}"  wx:for-item="itemName" id='{{item.productId}}' catchtap='in_xin3' data-in='use_sc' src='../../pic/badStar.png' class='Starimg'>></image>
+          
           </view>
         </view>
       </view>
-      <view class="order-footer">
-        <view class="order-footer-submit">提交评价</view>
-        </view>
+      <!-- <view class="order-footer">
+        <view id="{{item.productId}}" class="order-footer-submit" bindtap='submitComment'>提交评价</view>
+        </view> -->
     </view>
     
   </view>
-  
 </view>
+<view class='submitComment' bindtap='submitCommentButton'>提交评价</view>

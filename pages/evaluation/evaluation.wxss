@@ -36,3 +36,16 @@ page{
   background-color: white;
   padding-left: 30rpx;
 }
+
+.container-commodity{
+  display: flex;
+  font-size: 32rpx;
+  flex-direction: row;
+  width: 500rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Starimg{
+  width: 50rpx;
+  height: 50rpx;
+}

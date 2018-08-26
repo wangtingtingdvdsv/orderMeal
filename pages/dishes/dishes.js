@@ -1,5 +1,4 @@
 const app = getApp()
-
 Page({
   data: {
     sortMoudlePraise: true,
@@ -22,6 +21,8 @@ Page({
       },
       success: function (resInfo) {
         var data = resInfo.data.data;
+        console.log(data)
+        console.log(data.length)
         for(let i = 0; i < data.length; i++) {
           console.log(data[i].categoryName);
           var end = that.data.vegetableClassification.some(function(currentValue){
@@ -35,10 +36,12 @@ Page({
               'categoryType': data[i].categoryType,
             });
           }
-          that.data.mealsInfo[data[i].categoryType] = data[i].products
+          that.data.mealsInfo[data[i].categoryType] = data[i].products;
+          console.log(data[i].products)
           for (let j = 0; j < data[i].products.length;j++) {
             that.data.mealOrderInfo[data[i].products[j].productId] = {};
             that.data.mealOrderInfo[data[i].products[j].productId].num = 0;
+            that.data.mealOrderInfo[data[i].products[j].productId].productId = data[i].products[j].productId;
             that.data.mealOrderInfo[data[i].products[j].productId].productName = data[i].products[j].productName;
             that.data.mealOrderInfo[data[i].products[j].productId].productPrice = data[i].products[j].productPrice;
           }
@@ -79,7 +82,7 @@ Page({
   },
   individualMeals: function(event) {
     var id = event.target.id;
-    console.log(id);  
+    console.log(event);  
     var _this = this;
     _this.setData(
       {
@@ -179,18 +182,12 @@ Page({
   },
   //清空购物车
   deleteShopCar: function() {
-    console.log("mealOrderInfo上",this.data.mealOrderInfo);
     for(var item in this.data.mealOrderInfo) {
-        console.log("item", item);
-      console.log("1this.data[item]", this.data.mealOrderInfo[item]);
-        this.data.mealOrderInfo[item] = 0;
-      console.log("2this.data[item]", this.data.mealOrderInfo[item]);
+        this.data.mealOrderInfo[item].num = 0;
       this.setData({
         mealOrderInfo: this.data.mealOrderInfo
       })      
     }
-    console.log("mealOrderInfo下",this.data.mealOrderInfo);
-
     this.setData({
       total: '00.00'   
     })
@@ -198,11 +195,12 @@ Page({
   },
   //商品评价页
   evaluation: function(event) {
+    var productId = event.currentTarget.dataset.in;
     if (event.currentTarget.id != "mealInfoTop") {
       return;
     }
     wx.navigateTo({
-      url: '/pages/evaluation/evaluation',
+      url: '/pages/evaluation/evaluation?productId=' + productId,
     })
   },
   sortTheMoudlePraise: function () {
@@ -244,9 +242,19 @@ Page({
       } else {
         url =  '../addAddress/addAddress';  
       }
-      wx.navigateTo({
+      wx.reLaunch({
         url: url,
       })
     }
+  },
+  theOrder: function () {
+    wx.navigateTo({
+      url: '../Order/Order',
+    })
+  },
+  Search: function (t) {
+    wx.redirectTo({
+      url: "../Search/Search"
+    })
   }
 })

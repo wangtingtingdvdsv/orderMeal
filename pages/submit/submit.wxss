@@ -1,7 +1,7 @@
 
 /* pages/submit/submit.wxss */
 page{
-  background-color: #B0B0B0;
+  background-color: #E8E8E8;
 }
 .submit{
   background-color: #13BA84;
@@ -9,6 +9,7 @@ page{
   position: fixed;
   width: 100%;
   bottom: 0;
+  color: #ffffff;
 }
 
 .peopleInfoMoudle{
@@ -17,17 +18,16 @@ page{
   margin-top: 20rpx;
   width: 95%;
   height: 270rpx;
-  background-color: rgba(255, 255, 255, 0.493);
+  background-color: #ffffff;
 }
 .mealInfoMoudle{
-
   width: 90%;
   margin: 0 auto;
   margin-top: 20rpx;
-  background-color: rgba(255, 255, 255, 0.493); 
+  background-color: #ffffff;
 }
 picker {
-display:block;
+  display: block;
 }
 .time{
   

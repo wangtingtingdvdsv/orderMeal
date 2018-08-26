@@ -5,8 +5,9 @@
     <image class="searchorder" bindtap='theOrder' src="../../pic/dingdan.png" alt="订单"></image>
     <view class="search">
       <image class="searchIcon" src="../../pic/search.png" alt="搜素图标"></image>
-      <input class="searchInput" type="text" placeholder="请输入您需要的菜品名称"></input>
+      <input class="searchInput" bindtouchstart="Search" confirmType="搜索" type="text" placeholder="请输入您需要的菜品名称"></input>
     </view>
+       <!-- data-keywords="{{i.name}}" -->
   </view>
 
   <!--排序模块-->
@@ -47,9 +48,9 @@
   <view class="dishesMoudle">
 
     <!-- 选择菜品菜单模块 -->
-    <scroll-view scroll-y style='height:880rpx' bindtap="individualMeals" class="dishesMoudleLeft">
+    <scroll-view scroll-y wx:key="choiceDishes" style='height:880rpx' bindtap="individualMeals" class="dishesMoudleLeft">
        <view class="single">
-          <view  class="{{activeMenuId == item.categoryType ? 'active' : ''}}" wx:for="{{vegetableClassification}}"  id="{{item.categoryType}}" >{{item.categoryName}}        </view>
+          <view  class="{{activeMenuId == item.categoryType ? 'active' : ''}}" wx:key="choiceMenu" wx:for="{{vegetableClassification}}"  id="{{item.categoryType}}" >{{item.categoryName}}        </view>
        </view>
       <!-- <view class="single">
           <view id="single1" class="{{activeMenuId == 'single1' ? 'active' : ''}}">热推辣货</view>
@@ -72,8 +73,8 @@
 
     <!-- 菜品详情板块 -->
     <view class="dishesMoudleRight">
-      <scroll-view scroll-y wx:for="{{mealsInfo[activeMenuId]}}" class="mealInfo">
-        <view  bindtap='evaluation' id='mealInfoTop' class="mealInfoTop">
+      <scroll-view scroll-y wx:key="ChoiceMoudle" wx:for="{{mealsInfo[activeMenuId]}}" class="mealInfo">
+        <view  bindtap='evaluation' data-in="{{item.productId}}" id='mealInfoTop' class="mealInfoTop">
           <image class="mealPic" src="{{item.productIcon}}" alt="食物"></image>
           <view class="info">
             <text class="mealName">{{item.productName}}</text>
@@ -104,9 +105,9 @@
         <image wx:if="{{total != 0}}" class="shopCar" src="../../pic/shopCarHave.png" alt="购物车"></image>
         <image wx:if="{{total == 0}}" class="shopCar" src="../../pic/shopCar.png" alt="购物车"></image>
         <text class="totalMoney">￥{{total}} </text>|
-        <text class="startingCondition">差 ￥<text class="poorMoney">2</text>起送</text>
+        <text class="startingCondition">{{total>=2?'免费配送':'￥2以上起送'}}</text>
     </view>
-    <view bindtap='thePayIt' class="buyMoudleCalculation" >
+    <view bindtap='thePayIt' class="buyMoudleCalculation">
       去结算
     </view>
   </view>

@@ -18,5 +18,5 @@
     <view class='fontthething'>{{delivery.time}}</view>
   </view>
 </view>
-<button class="return" bindtap='return'>回到首页</button>
+<button class="return" bindtap='Return'>回到首页</button>
 </view>

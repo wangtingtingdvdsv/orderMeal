@@ -1,4 +1,5 @@
 var app = getApp();
+const util = require('../../utils/util.js')
 // pages/sureInfo/sureInfo.js
 Page({
 
@@ -7,9 +8,14 @@ Page({
    */
   data: {
     userName:"",
-    userIcon:""
-  
+    userIcon:"",
+    userId:""
   },
+  tap: util.throttle(function (e) {
+    console.log(this)
+    console.log(e)
+    console.log((new Date()).getSeconds())
+  }, 1000),
   onGotUserInfo: function (e) {
     var that = this;
    //console.log(e.detail.errMsg)
@@ -36,20 +42,16 @@ Page({
                     'content-type': 'application/json'
                   },
                   success: function (resInfo) {
-                   // console.log(resInfo.data.data.userId);
+                    console.log(resInfo);
                     app.globalData['userId'] = resInfo.data.data.userId;
+                    app.globalData['userOpenid'] = resInfo.data.data.userOpenid;
+                    console.log(resInfo.data.data.userOpenid)
                     wx.navigateTo({
                       url: '../dishes/dishes',
                     })
                   
                   }
                 })
-
-
-
-
-
-
               }
             })
           }
