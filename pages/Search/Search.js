@@ -28,17 +28,11 @@ Page({
       success:function(t){
         var data = t.data.data;
         if(data != ''){
-        console.log(data);
-        var arr = [];
-        for (let i = 0; i < data.length; i++) {
-          arr.push(data[i].productName);
-        }
-        console.log(arr);
-        that.setData({
-          productJson: t.data.data
-        })
-        }
-        else{
+          console.log("搜索", data);
+          that.setData({
+            productJson: t.data.data
+          })
+        } else {
           wx.showToast({
             title: '未找到该菜品',
             icon: 'loading',
@@ -54,7 +48,8 @@ Page({
     })
   },
   bindSearch: function (e) {
-    var keywords = e.target.dataset.keywords;
+    var keywords = e.target.id;
+    console.log("keywords", keywords);
     var url = '../dishes/dishes?keywords=' + keywords;
     wx.redirectTo({
       url: url

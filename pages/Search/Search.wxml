@@ -6,6 +6,7 @@
        <!-- data-keywords="{{i.name}}" -->
 </view>
 <cover-view
+  id='{{i.productId}}'
   bindtouchstart="bindSearch"      
   class="text_box" 
   wx:for="{{productJson}}" 

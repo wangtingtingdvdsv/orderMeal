@@ -1,6 +1,7 @@
 const app = getApp()
 Page({
   data: {
+    productId:"",
     sortMoudlePraise: true,
     sortMoudlePrice: false,
     currentData: 0,
@@ -11,11 +12,18 @@ Page({
     },
     vegetableClassification: []
   },
-  onLoad: function() {
+  onLoad: function(options) {
     var that = this;
+    var sort = 1;
+    if (this.data.sortMoudlePrice) {
+      sort = 2;
+    }
     wx.request({
       url: 'https://cxd.mynatapp.cc/buyer/product/list',
       method: 'GET',
+      data:{
+        sort: sort
+      },
       header: {
         'content-type': 'text/html'
       },
@@ -56,7 +64,25 @@ Page({
         that.setData({
           vegetableClassification: that.data.vegetableClassification
         })
-     
+
+        //页面传参
+        var activeMenuId = that.data.activeMenuId;
+        var mealsInfo = that.data.mealsInfo;
+        var productId = 'Id'+mealsInfo[activeMenuId][0].productId;
+       
+        if (options.keywords) {
+          console.log('keywords', options.keywords);
+          productId = 'Id'+options.keywords;
+          //更改activeMenuId的值
+          let activeMenuId = that.getActiveMenuIdByProductId(productId)
+
+          that.setData({
+            activeMenuId: activeMenuId
+          })
+        }
+        that.setData({
+          productId: productId
+        })
       }
     })
     //获取收获地址
@@ -79,6 +105,19 @@ Page({
         console.log("错误");
       }
     })
+  },
+  getActiveMenuIdByProductId: function (productId) {
+    var mealsInfo = this.data.mealsInfo;
+    for(let item in mealsInfo) {
+      let activeMenuId = item;
+      for (let i = 0; i < mealsInfo[activeMenuId].length; i++) {
+        if (productId == 'Id'+mealsInfo[activeMenuId][i].productId) {
+         console.log('相等');
+          return activeMenuId;
+        }
+      }
+    }
+    console.log('不相等');
   },
   individualMeals: function(event) {
     var id = event.target.id;
@@ -204,14 +243,24 @@ Page({
     })
   },
   sortTheMoudlePraise: function () {
-    this.setData({
-      sortMoudlePraise: !this.data.sortMoudlePraise,
-    })
-  },
-  sortTheMoudlePrice: function () {
+    if (this.data.sortMoudlePraise) {
+      return;
+    }
     this.setData({
       sortMoudlePrice: !this.data.sortMoudlePrice,
+      sortMoudlePraise: !this.data.sortMoudlePraise
     })
+    this.onLoad({});
+  },
+  sortTheMoudlePrice: function () {
+    if (this.data.sortMoudlePrice) {
+      return;
+    }
+    this.setData({
+      sortMoudlePraise: !this.data.sortMoudlePraise,
+      sortMoudlePrice: !this.data.sortMoudlePrice
+    })
+    this.onLoad({});
   },
   theOrder:function(){
     wx.navigateTo({
@@ -253,6 +302,7 @@ Page({
     })
   },
   Search: function (t) {
+    console.log("搜素");
     wx.redirectTo({
       url: "../Search/Search"
     })

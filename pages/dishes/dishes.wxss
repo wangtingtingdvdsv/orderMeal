@@ -101,7 +101,7 @@
 }
 /*  菜品展示模块  */
 .dishesMoudleRight{
-  height:880rpx;
+  
   width:65%;
   display: flex;
   flex-direction: column;
