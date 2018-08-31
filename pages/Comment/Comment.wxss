@@ -1,11 +1,14 @@
 
+/* 评价整体页面信息 */
 .theContainer{
   display: flex;
   flex-direction: column;
 }
+/* 评价信息 */
 .container-post{
   margin: 20rpx 0 ;
 }
+/* 评价信息具体内容 */
 .container-commodity{
   display: flex;
   font-size: 32rpx;
@@ -14,14 +17,12 @@
   justify-content: flex-end;
   align-items: center;
 }
+/* 评价星星 */
 .Starimg{
   width: 50rpx;
   height: 50rpx;
 }
-/* pages/order/order.wxss */
-.container{
-  height: 100%;
-}
+/* 评价列表 */
 .orderList{
   width: 100%;
   padding: 20rpx;
@@ -29,32 +30,13 @@
   border-style: solid;
   border-color: #ECECEC;
 }
-.order-title{
-  width: 100%;
-  height: 70rpx;
-  line-height: 70rpx;
-  border-bottom: 1rpx solid #ECECEC;
-  display: flex;
-  justify-content: space-between;
-}
+/* 评价题目（菜品名称） */
 .order-title-restaurantName{
   width: 500rpx;
   height: 100%;
   font-size: 32rpx;
 }
-.order-title-state{
-  width: 200rpx;
-  color: #D2D2D2;
-  margin-right: 30rpx;
-  font-size: 28rpx;
-}
-.order-content{
-  padding: 50rpx 0 50rpx 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1rpx solid #ECECEC; 
-}
+/* 评价菜品详情 */
 .order-commodity{
   padding: 50rpx 0 50rpx 0;
   display: flex;
@@ -62,40 +44,12 @@
   align-items: center;
   border-bottom: 1rpx solid #ECECEC; 
 }
+/* 评价菜品图片 */
 .order-content-restaurantImg{
   width: 200rpx;
   height: 125rpx;
 }
-
-.order-content-info-howToDistribute{
-  width: 350rpx;
-  line-height: 42rpx;
-  margin-left: 30rpx;
-}
-.order-content-info-price{
-  color: red;
-  font-size: 30rpx;
-  margin-left: 400rpx;
-  position: absolute;
-}
-.order-footer{
-  width: 100%;
-  height: 90rpx;
-  display: flex;
-  margin-left: 500rpx;
-  font-size: 28rpx;
-}
-.order-footer-orderAgain{
-  margin-top: 15rpx;
-  height: 70rpx;
-  line-height: 70rpx;
-  width: 200rpx;
-  text-align: center;
-  border: 1rpx solid #ECECEC;
-}
-.order-footer-orderAgain{
-  margin-right: 20rpx;
-}
+/* 评价提交信息 */
 .order-footer-submit{
   margin-top: 15rpx;
   height: 70rpx;
@@ -109,6 +63,8 @@
 .submitComment{
   margin-top: 100rpx;
   height: 100rpx;
+  font-size: 36rpx;
+  color:#ffffff;
   background: #13BA84;
   display: flex;
   align-items: center;

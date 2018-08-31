@@ -1,6 +1,5 @@
-// pages/submit/submit.js
+// 提交订单页面
 const app = getApp();
-
 Page({
   data:{
     mealOrderInfo: { 
@@ -10,6 +9,7 @@ Page({
     items:[],
     nowTims:'',
   },
+  // 用户选择送餐时间
   bindTimeChange: function (e) {
     var delivery = {};
     var date = new Date();
@@ -29,7 +29,6 @@ Page({
     var nowDate = new Date();
     var that = this;
     var nowTime = nowDate.getHours() + ':' + nowDate.getMinutes();
- 
     that.setData({
       mealOrderInfo: app.globalData.mealOrderInfo,
       total: app.globalData.total,
@@ -43,6 +42,7 @@ Page({
     })
   },
   submitOrder: function() {
+    // 点击提交订单发送订单数据给后端
     var that = this;
     var items = [];
     if (app.globalData.Time == "") {
@@ -83,7 +83,6 @@ Page({
         console.log("error", error)
       }
     })
-
     wx.navigateTo({
       url: '/pages/thePay/thePay',
     })
@@ -93,9 +92,4 @@ Page({
       url: '/pages/addAddress/addAddress',
     })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-
 })

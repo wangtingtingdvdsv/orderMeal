@@ -1,19 +1,11 @@
-// pages/Search/Search.js
+// 搜索菜品信息
 Page({
   data: {
     searchdish:false,
     productJson:[],
-    tips:[
-      {name:123},{name:456},{name:789}
-    ]
+    tips:[]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
+  // 点击搜索事件
   Search:function(t){
     var that = this;
     wx.request({
@@ -43,10 +35,10 @@ Page({
       },
       fail:function(t){
        // console.log(t.data)``
-      console.log(21111111111111)
       }
     })
   },
+  // 页面传值keywords即菜品信息
   bindSearch: function (e) {
     var keywords = e.target.id;
     console.log("keywords", keywords);

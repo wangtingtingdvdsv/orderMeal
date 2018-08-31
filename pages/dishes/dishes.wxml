@@ -1,16 +1,17 @@
+<!-- 订餐服务首页面 -->
 <view>
-
-  <!--搜素模块-->
+  <!--搜素模块以及订单模块-->
   <view class="searchMoudle">
+    <!-- 订单模块 -->
     <image class="searchorder" bindtap='theOrder' src="../../pic/dingdan.png" alt="订单"></image>
+    <!-- 搜索模块 -->
     <view class="search">
       <image class="searchIcon" src="../../pic/search.png" alt="搜素图标"></image>
       <input class="searchInput" bindtouchstart="Search" confirmType="搜索" type="text" placeholder="请输入您需要的菜品名称"></input>
     </view>
-       <!-- data-keywords="{{i.name}}" -->
   </view>
 
-  <!--排序模块-->
+  <!--排序菜品模块-->
   <view class="sortMoudle" >
     <view class="sortMoudleLeft" bindtap="sortTheMoudlePraise">
       <text style="{{sortMoudlePraise === true  ? 'color:#13BA84;':''}}">好评优先</text>
@@ -54,9 +55,7 @@
        </view>
 
     </scroll-view>
-    <!-- sadasdsdsd -->
     <!-- 菜品详情板块 -->
-    <!-- scroll-into-view="Id{{key}}" -->
     <scroll-view style='height:880rpx' scroll-y scroll-into-view="{{productId}}" class="dishesMoudleRight">
       <view id='Id{{item.productId}}' wx:key="ChoiceMoudle" wx:for="{{mealsInfo[activeMenuId]}}" class="mealInfo">
         <view  bindtap='evaluation' data-in="{{item.productId}}" id='mealInfoTop' class="mealInfoTop">
@@ -64,8 +63,8 @@
           <view class="info">
             <text class="mealName">{{item.productName}}</text>
             <view class="star">             
-              <image wx:for="{{item.productScore}}" class="starImage" src="../../pic/star.png" alt="星星"></image>
-              <image wx:for="{{5-item.productScore}}" class="starImage" src="../../pic/badStar.png" alt="星星"></image>
+              <image wx:for="{{item.productScore}}" wx:key="item.productScore" class="starImage" src="../../pic/star.png" alt="星星"></image>
+              <image wx:for="{{5-item.productScore}}" wx:key="5-item.productScore" class="starImage" src="../../pic/badStar.png" alt="星星"></image>
             </view>
             <text class="sale">月销量：<text>{{item.productSales}}</text></text>
           </view>
@@ -84,6 +83,7 @@
       </view>
     </scroll-view>   
   </view>
+  
   <!--购物车和支付模块-->
   <view class="buyMoudle">
     <view  bindtap="clickme" class="buyMoudleCar">

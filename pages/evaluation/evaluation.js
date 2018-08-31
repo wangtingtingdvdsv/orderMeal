@@ -1,5 +1,4 @@
 Page({
-
   data: {
     evaluatons:[],
     one_1: 0,
@@ -30,7 +29,6 @@ Page({
         that.setData({
           evaluatons:data
         })
-
         that.setData({
           one_1: data[0].qualityScore,
           two_1: 5 - data[0].qualityScore
@@ -44,8 +42,6 @@ Page({
           two_3: 5 - data[0].packingScore
         })
       }
-
     })
-   
   },
 })

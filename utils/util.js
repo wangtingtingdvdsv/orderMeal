@@ -1,10 +1,11 @@
+/**
+ * 设置防抖事件避免登录时重复请求
+ */
 function throttle(fn, gapTime) {
   if (gapTime == null || gapTime == undefined) {
-    gapTime = 3000
+    gapTime = 5000
   }
-
   let _lastTime = null
-
   // 返回新的函数
   return function () {
     let _nowTime = + new Date()
@@ -21,19 +22,15 @@ function throttle(fn, gapTime) {
  * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
 */
 function formatTimeTwo(number, format) {
-
   var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
   var returnArr = [];
-
   var date = new Date(number);
   returnArr.push(date.getFullYear());
   returnArr.push(formatNumber(date.getMonth() + 1));
   returnArr.push(formatNumber(date.getDate()));
-
   returnArr.push(formatNumber(date.getHours()));
   returnArr.push(formatNumber(date.getMinutes()));
   returnArr.push(formatNumber(date.getSeconds()));
-
   for (var i in returnArr) {
     format = format.replace(formateArr[i], returnArr[i]);
   }
@@ -47,7 +44,6 @@ const formatTime = date => {
   const hour = date.getHours()
   const minute = date.getMinutes()
   const second = date.getSeconds()
-
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 

@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.0",
 	"appid": "wx33fdb2328d611917",
-	"projectname": "orderMeal",
+	"projectname": "order-Meal",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

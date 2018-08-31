@@ -1,4 +1,4 @@
-// pages/thePay/thePayOver.js
+// 订单结束
 const app = getApp()
 Page({
   data:{
@@ -10,7 +10,7 @@ Page({
       total: app.globalData.total
     })
     console.log("time", app.globalData.deliveryTime);
-    //顾客信息
+    //顾客各种信息
     var delivery = {};
     var date = new Date();
     var year = date.getFullYear();

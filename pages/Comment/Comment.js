@@ -1,5 +1,4 @@
 const app = getApp();
-// pages/test/test.js
 Page({
   data: {
     orderId:"",
@@ -10,30 +9,14 @@ Page({
       // }
     ],
     starNum:{
-      //productId:{
-          // one_1: 0,
-          // two_1: 5,
-          // one_2: 0,
-          // two_2: 5,
-          // one_3: 0,
-          // two_3: 5,
-      //}
     },
-    one_1: 0,
-    two_1: 5,
-    one_2: 0,
-    two_2: 5,
-    one_3: 0,
-    two_3: 5
-    // one_10: "",
-    // two_10: "",
-    // one_20: "",
-    // two_20: "",
-    // one_30: "",
-    // two_30: "",
-    // num10:1,
-    // num20:2,
-    // num30:3
+    one_1: 5,
+    two_1: 1,
+    one_2: 5,
+    two_2: 1,
+    one_3: 5,
+    two_3: 1
+    // 给评价一个起始值
   },
   onLoad: function (options) {
     //接受父页面传递过来的参数
@@ -45,12 +28,12 @@ Page({
     //初始化starNum
     for (let i = 0; i < this.data.product.length; i++) {
       this.data.starNum[this.data.product[i].productId] = {}
-      this.data.starNum[this.data.product[i].productId].one_1 = 0;
-      this.data.starNum[this.data.product[i].productId].two_1 = 5;
-      this.data.starNum[this.data.product[i].productId].one_2 = 0;
-      this.data.starNum[this.data.product[i].productId].two_2 = 5;
-      this.data.starNum[this.data.product[i].productId].one_3 = 0;
-      this.data.starNum[this.data.product[i].productId].two_3 = 5;
+      this.data.starNum[this.data.product[i].productId].one_1 = 5;
+      this.data.starNum[this.data.product[i].productId].two_1 = 0;
+      this.data.starNum[this.data.product[i].productId].one_2 = 5;
+      this.data.starNum[this.data.product[i].productId].two_2 = 0;
+      this.data.starNum[this.data.product[i].productId].one_3 = 5;
+      this.data.starNum[this.data.product[i].productId].two_3 = 0;
     }
     this.setData({
       starNum: this.data.starNum
@@ -71,11 +54,12 @@ Page({
   },
 
   //情况二:用户给评分
+  // 商品质量
   in_xin1: function (e) {
     let productId = e.target.id;
     var in_xin = e.currentTarget.dataset.in;
     var one_1 = this.data.starNum[productId].one_1;
-    if (in_xin === 'use_sc2') {
+    if (in_xin === 'use_sc2' && one_1 !==1) {
       one_1--;
     } else {
       one_1++;
@@ -86,11 +70,12 @@ Page({
       starNum: this.data.starNum
     })
   },
+  // 商品口味
   in_xin2: function (e) {
     let productId = e.target.id;
     var in_xin = e.currentTarget.dataset.in;
     var one_2 = this.data.starNum[productId].one_2;
-    if (in_xin === 'use_sc2') {
+    if (in_xin === 'use_sc2' && one_2 !== 1) {
       one_2--;
     } else {
       one_2++;
@@ -101,11 +86,12 @@ Page({
       starNum: this.data.starNum
     })
   },
+  // 商品包装
   in_xin3: function (e) {
     let productId = e.target.id;
     var in_xin = e.currentTarget.dataset.in;
     var one_3 = this.data.starNum[productId].one_3;
-    if (in_xin === 'use_sc2') {
+    if (in_xin === 'use_sc2' && one_3 !== 1) {
       one_3--;
     } else {
       one_3++;
@@ -116,38 +102,10 @@ Page({
       starNum: this.data.starNum
     })
   },
-  // submitComment: function(e) {
-  //   console.log("点击");
-  //   let productId = e.target.id;
-  //   wx.request({
-  //     url: 'https://cxd.mynatapp.cc/buyer/comment/',
-  //     method: 'POST',
-  //     header: {
-  //       'content-type': 'application/json'
-  //     },
-  //     data: {
-  //       orderId: this.data.orderId,
-  //       productId:e.target.id,
-  //       userOpenid: app.globalData.userOpenid,
-  //       qualityScore: this.data.starNum[productId].one_1,
-  //       tasteScore: this.data.starNum[productId].one_2,
-  //       packingScore: this.data.starNum[productId].one_3
-  //     },
-  //     success: function (res) {
-
-  //       console.log("评价success", res)
-  //     },
-  //     error: function (error) {
-  //       console.log("error", error)
-  //     }
-  //   })
-
-  // },
+  // 评价提交信息
   submitCommentButton: function() {
     var that = this;
- 
     for (let obj in that.data.starNum) {
-    
       wx.request({
         url: 'https://cxd.mynatapp.cc/buyer/comment/',
         method: 'POST',
@@ -163,14 +121,19 @@ Page({
           packingScore: that.data.starNum[obj].one_3
         },
         success: function (res) {
-
-          console.log("评价success", res)
+          wx.showToast({
+            title: '评价成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.redirectTo({
+            url: '../dishes/dishes',
+          })
         },
         error: function (error) {
           console.log("error", error)
         }
       })
-
     }
   }
 })

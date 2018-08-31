@@ -1,7 +1,7 @@
 var app = getApp();
+// 设置订单地址信息 
 Page({
   data: {
-  
   },
   bindCancel: function () {
     wx.reLaunch({
@@ -9,10 +9,8 @@ Page({
     })
   },
   fromSubmit: function(e) {
-    // wx.navigateTo({
-    //   url: '/pages/submit/submit',
-    // })
     var value = e.detail.value;
+    // 判断表单是否为空
     if(value.userName === "" || value.userAddress === "" || value.userPhone === "") {
       wx.showModal({
         content: '请完善信息',

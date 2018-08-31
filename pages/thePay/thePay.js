@@ -93,6 +93,7 @@ function wallet_pay(_this) {
   wx.reLaunch({
     url: 'thePayOver',
   })
+  // 支付结束将订单状态反回给后端
   wx.request({
     url: 'https://cxd.mynatapp.cc/buyer/order/pay',
     method: 'POST',

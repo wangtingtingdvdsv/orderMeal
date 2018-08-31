@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 Page({
   data: {
     productId:"",
@@ -235,6 +235,7 @@ Page({
   //商品评价页
   evaluation: function(event) {
     var productId = event.currentTarget.dataset.in;
+    console.log(event.currentTarget.dataset.in)
     if (event.currentTarget.id != "mealInfoTop") {
       return;
     }
@@ -291,8 +292,8 @@ Page({
       } else {
         url =  '../addAddress/addAddress';  
       }
-      wx.reLaunch({
-        url: url,
+      wx.navigateTo({
+        url: url
       })
     }
   },

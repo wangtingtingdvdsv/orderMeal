@@ -1,1 +1,3 @@
+<!-- 获取用户登陆信息页面 -->
 <button open-type="getUserInfo" bindtap="tap" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+
