@@ -88,7 +88,7 @@ Page({
     })
   },
   modifyAddress: function () {
-    wx.navigateTo({
+    wx.reLaunch({
       url: '/pages/addAddress/addAddress',
     })
   },

@@ -2,6 +2,7 @@
   "pages": [
     "pages/sureInfo/sureInfo",
     "pages/dishes/dishes",
+    "pages/userEvaluation/userEvaluation",
     "pages/Order/Order",
     "pages/submit/submit",
     "pages/Search/Search",

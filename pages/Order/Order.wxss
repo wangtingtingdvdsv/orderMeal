@@ -71,11 +71,12 @@
   margin-top: 15rpx;
   height: 90rpx;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   font-size: 28rpx;
 }
 .order-footer-address{
+  margin-left:20rpx;
   margin-right: 80rpx; 
   color: #8C8B8B;
 }
@@ -87,10 +88,11 @@
   text-align: center;
   border: 1rpx solid #ECECEC;
 }
-/* 跳转按钮再来一单 */
+/* 跳转按钮回到菜单 */
 .order-footer-orderAgain{
+  
   border: 1rpx solid #ECECEC;
-  margin-right: 20rpx;
+  margin-right: 40rpx;
 }
 /* 跳转按钮去评论或查看评论 */
 .order-footer-goToComment{

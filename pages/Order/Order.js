@@ -52,17 +52,16 @@ Page({
   },
   // 跳转页面到订单首页面
   orderAgain:function(){
-    wx.reLaunch({
-      url: '../dishes/dishes',
+    wx.navigateBack({
     })
   },
-  // 查看评论
+  // 查看我的评论
   lookComment: function (event) {
     let orderId = event.target.id;
-    let productId = this.data.products[orderId][0].productId;
-    console.log(this.data.products[orderId][0].productId)
+    let str = JSON.stringify(this.data.products[orderId])
+    console.log(this.data.products[orderId])
     wx.navigateTo({
-      url: '/pages/evaluation/evaluation?productId=' + productId,
+      url: '../userEvaluation/userEvaluation?jsonStr=' + str + '&orderId=' + orderId,
     })
   },
   // 点击按钮去评论

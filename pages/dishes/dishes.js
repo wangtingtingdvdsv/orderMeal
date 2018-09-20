@@ -282,6 +282,14 @@ Page({
         mask: true
       })
     }
+    else if (this.data.total>=0 && this.data.total <= 2) {
+      wx.showToast({
+        title: '此时不配送',
+        icon: 'loading',
+        duration: 2000,
+        mask: true
+      })
+    }
     else{
       var url;
       if(app.globalData.address.userPhone &&
@@ -304,7 +312,7 @@ Page({
   },
   Search: function (t) {
     console.log("搜素");
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../Search/Search"
     })
   }

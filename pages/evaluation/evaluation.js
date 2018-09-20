@@ -19,6 +19,7 @@ Page({
         'content-type': 'application/json',
       },
       success: function(res) {
+        console.log(options.productId)
         var data = res.data.data;
         console.log(data);
         for(let i = 0; i < data.length; i++) {

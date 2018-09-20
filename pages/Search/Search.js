@@ -43,7 +43,7 @@ Page({
     var keywords = e.target.id;
     console.log("keywords", keywords);
     var url = '../dishes/dishes?keywords=' + keywords;
-    wx.redirectTo({
+    wx.reLaunch({
       url: url
     })
   }
